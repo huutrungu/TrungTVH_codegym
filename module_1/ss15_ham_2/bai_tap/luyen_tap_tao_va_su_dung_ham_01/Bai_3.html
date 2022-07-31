@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function soSanhHaiSo(a, b) {
+        let sum = 0;
+        if (a > b) {
+            return 'a>b';
+        } else {
+            sum = a + b;
+            return sum;
+        }
+    }
+
+    let soDau = parseInt(prompt('nhập số đầu tiên: '));
+    let soHai = parseInt(prompt('nhập số thứ hai: '));
+    let ketQua = soSanhHaiSo(soDau, soHai);
+    alert(ketQua);
+</script>
+</body>
+</html>

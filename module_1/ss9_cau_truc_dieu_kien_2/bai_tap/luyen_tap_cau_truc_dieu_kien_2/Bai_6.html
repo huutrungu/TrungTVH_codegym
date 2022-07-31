@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ <!--Nhập các tham số của phương trình ax + b = 0-->
+<script>
+    let a = parseFloat(prompt("nhập a: "));
+    let b = parseFloat(prompt("nhập b: "));
+    if (a === 0) {
+        if (b=0) {
+            alert("phương trình vô số nghiệm.");
+        } else {
+            alert("phương trình vô nghiệm.");
+        }
+    } else {
+        x = -b/a;
+        alert("phương trình có nghiệm duy nhất: " + x);
+    }
+
+</script>
+</body>
+</html>

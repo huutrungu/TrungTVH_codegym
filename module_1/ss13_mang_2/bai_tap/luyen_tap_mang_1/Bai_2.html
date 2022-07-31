@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrSoNguyen = [32, 1, 34, 2, 14, 2, 5, 51, 99, 765];
+    let max = arrSoNguyen[0];
+    for (let i = 1; i <= arrSoNguyen.length - 1; i++) {
+        if (arrSoNguyen[i] > max) {
+            max = arrSoNguyen[i];
+        }
+    }
+    document.write(max + ' là số lớn nhất trong mảng');
+    document.write('<br/>');
+    document.writeln(arrSoNguyen.indexOf(max) + ' là vị trí của phần tử '+ max + ' trong mảng');
+</script>
+</body>
+</html>

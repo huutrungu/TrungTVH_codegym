@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="bienSo" placeholder="Biển số">
+<input type="text" id="chuSoHuu" placeholder="Chủ Sở Hữu">
+<input type="text" id="dungTichXL" placeholder="Dung tích Xi lanh">
+<input type="button" value="Thêm mới" onclick="themMoi()">
+<input type="button" value="Lưu" onclick="luu()">
+<p id="ketQua"></p>
+<script>
+    class XeMay {
+        constructor(bienKS, chuSoHuu, dungTichXL) {
+            this.bienSo = bienKS;
+            this.chuSoHuu = chuSoHuu;
+            this.dungTichXL = dungTichXL;
+        }
+
+        setBienSo(bienSo) {
+            this.bienSo = bienSo;
+        }
+
+        getBienSo() {
+            return this.bienSo;
+        }
+
+        setChuSoHuu(chuSoHuu) {
+            this.chuSoHuu = chuSoHuu;
+        }
+
+        getChuSoHuu() {
+            return this.chuSoHuu;
+        }
+
+        setDungTichXL(dungTichXL) {
+            this.dungTichXL = dungTichXL;
+        }
+
+        getDungTichXL() {
+            return this.dungTichXL;
+        }
+
+        toString() {
+            return 'Biển số : ' + this.bienSo + ' Chủ sở hữu :' + this.chuSoHuu + ' Dung tích Xilanh' + this.dungTichXL;
+        }
+    }
+
+    let xe1 = new XeMay('75H-1808', 'Hữu Trung', 100);
+    let xe2 = new XeMay('75H-1404', 'B', 100);
+    let xe3 = new XeMay('75H-1503', 'T', 100);
+    let danhSachXe = [xe1, xe2, xe3];
+    hienThi(danhSachXe);
+    let idTemp;
+
+    function themMoi() {
+        let bienSo = document.getElementById('bienSo').value;
+        let chuSoHuu = document.getElementById('chuSoHuu').value;
+        let dungTichXL = document.getElementById('dungTichXL').value;
+        let xeMoi = new XeMay(bienSo, chuSoHuu, dungTichXL);
+        danhSachXe.push(xeMoi);
+        hienThi(danhSachXe);
+        document.getElementById('bienSo').value = '';
+        document.getElementById('chuSoHuu').value = '';
+        document.getElementById('dungTichXL').value = '';
+    }
+
+    function xoaXe(id) {
+
+    }
+
+    function suaXe(id) {
+        idTemp = id; // lưu địa chỉ id cần sửa
+        document.getElementById('bienSo').value = danhSachXe[id].getBienSo();
+        document.getElementById('chuSoHuu').value = danhSachXe[id].getChuSoHuu();
+        document.getElementById('dungTichXL').value = danhSachXe[id].getDungTichXL();
+    }
+
+    function luu() {
+        let bienSo = document.getElementById('bienSo').value;
+        let chuSoHuu = document.getElementById('chuSoHuu').value;
+        let dungTichXL = document.getElementById('dungTichXL').value;
+        danhSachXe[idTemp].setBienSo(bienSo);
+        danhSachXe[idTemp].setChuSoHuu(chuSoHuu);
+        danhSachXe[idTemp].setDungTichXL(dungTichXL);
+        hienThi(danhSachXe);
+    }
+
+    function hienThi(danhSach) {
+        let bang = '<table border="1" style="border-collapse: collapse ">\n' +
+            '    <tr>\n' +
+            '        <th>STT</th>\n' +
+            '        <th>Biển số</th>\n' +
+            '        <th>Chủ sở hữu</th>\n' +
+            '        <th>Dung tích Xilanh</th>\n' +
+            '        <th>Chỉnh sửa </th>\n' +
+            '        <th>Xoá</th>\n' +
+            '    </tr>';
+        for (let i = 0; i < danhSach.length; i++) {
+            bang += '<tr>\n' +
+                '        <td>' + (i + 1) + '</td>\n' +
+                '        <td>' + danhSach[i].getBienSo() + '</td>\n' +
+                '        <td>' + danhSach[i].getChuSoHuu() + '</td>\n' +
+                '        <td>' + danhSach[i].getDungTichXL() + '</td>\n' +
+                '        <td><input type="button" value="Chỉnh sửa" onclick="suaXe(' + i + ')"></td>\n' +
+                '        <td><input type="button" value="Xoá" onclick="xoaXe(' + i + ')"></td>\n' +
+                '    </tr>'
+        }
+        bang += '</table>'
+        document.getElementById('ketQua').innerHTML = bang;
+    }
+</script>
+</body>
+</html>

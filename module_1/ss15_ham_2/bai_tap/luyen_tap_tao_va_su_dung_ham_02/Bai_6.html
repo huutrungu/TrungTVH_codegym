@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function kiemTraSoNguyenDuong(a) {
+        if (Number.isInteger(a) && a > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    let num = parseFloat(prompt('nhập số: '));
+    let ketQua = kiemTraSoNguyenDuong(num);
+    alert(ketQua);
+</script>
+</body>
+</html>

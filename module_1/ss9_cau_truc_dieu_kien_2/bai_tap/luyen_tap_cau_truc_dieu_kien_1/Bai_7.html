@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--Phí thuê bao bắt buộc là 25 nghìn.-->
+<!--600 đồng cho mỗi phút gọi của 50 phút đầu tiên.-->
+<!--400 đồng cho mỗi phút gọi của 150 phút tiếp theo.-->
+<!--200 đồng cho bất kỳ mỗi phút nào sau 200 phút đầu tiên.-->
+<script>
+    let minute = parseInt(prompt("Nhập số phút đã gọi: ",));
+    let bill;
+    if (minute <= 50) {
+    bill= 25+ 600*minute;
+    alert("cước phí của bạn là:" + bill + " VND");
+    } else if ( minute <=200) {
+        bill = 25+ 600*50+ 400*minute;
+        alert("cước phí của bạn là: "+ bill+ " VND");
+    } else {
+        bill = 25 + 600*50 + 400*150 + 200*minute;
+        alert("cước phí của bạn là: "+ bill + " VND");
+    }
+
+</script>
+</body>
+</html>

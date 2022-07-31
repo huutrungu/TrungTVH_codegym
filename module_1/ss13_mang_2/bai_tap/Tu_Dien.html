@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ Điển</title>
+    <style>
+        input[type=text] {
+            width: 300px;
+            font-size: 16px;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            padding: 12px 10px 12px 10px;
+        }
+
+        #submit {
+            border-radius: 2px;
+            padding: 10px 32px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+<h2>Từ Điển Anh - Việt</h2>
+<form>
+    <input type="text" id="submit" name="search" placeholder="Nhập từ cần tìm"/>
+    <input type="button" value="Tìm" onclick="trans()"/>
+    <p id="kq"></p>
+</form>
+<script>
+
+    let engLish = ['Hello', 'Music', 'Love', 'Spring', 'Summer', 'Autumn', 'Winter'];
+    let vietNamese = ['Xin chào', 'Âm nhạc', 'Tình Yêu', 'Mùa Xuân', 'Muà Hạ', 'Mùa Thu', 'Mùa Đông'];
+    let flag = false;
+
+    function trans() {
+        let index = -1;
+        let word = document.getElementById('submit').value;
+        for (let i = 0; i < engLish.length; i++) {
+            if (engLish[i] === word) {
+                index = i;
+                flag = true;
+                break;
+            }
+        }
+        if (!flag) {
+            document.getElementById('kq').innerHTML = 'Không tìm thấy nghĩa của từ.'
+        } else {
+            document.getElementById('kq').innerHTML = 'Nghĩa là: ' + vietNamese[index];
+        }
+    }
+
+
+</script>
+</body>
+</html>

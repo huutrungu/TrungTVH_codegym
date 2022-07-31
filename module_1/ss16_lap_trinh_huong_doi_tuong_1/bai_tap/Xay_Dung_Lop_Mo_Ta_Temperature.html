@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Temperature {
+        constructor(doC) {
+            this.doC = doC;
+        }
+
+        cToF() {
+            let doF = this.doC * 9 / 5 + 32;
+            document.write(doF);
+            document.write('<br/>');
+        }
+
+        cToKenvin() {
+            let doKenvin = this.doC + 273.15;
+            document.write(doKenvin);
+        }
+    }
+
+    let t = parseFloat(prompt("nhập nhiệt độ hiện tại(C): "));
+    let nhietdo = new Temperature(t);
+    nhietdo.cToF();
+    nhietdo.cToKenvin();
+</script>
+</body>
+</html>

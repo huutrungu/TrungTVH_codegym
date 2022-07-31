@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrSoNguyen = [32, 1, 34, 2, 14, 2, 5, 51, 99, 765];
+    let V = parseInt(prompt("number: "));
+    let count = 0;
+    for (let i = 0; i <= arrSoNguyen.length - 1; i++) {
+        if (arrSoNguyen[i] === V) {
+            count++;
+        }
+    }
+    if (count > 0) {
+        document.write(V + ' is in the array');
+    } else {
+        document.write(V + ' is not in the array');
+    }
+</script>
+</body>
+</html>

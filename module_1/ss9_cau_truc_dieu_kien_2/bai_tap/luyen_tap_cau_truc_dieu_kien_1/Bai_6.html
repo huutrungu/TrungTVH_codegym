@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--/* 5% nếu tổng doanh số nhỏ hơn hoặc bằng 100 triệu.-->
+
+<!--10% nếu tổng doanh số nhỏ hơn hoặc bằng 300 triệu.-->
+
+<!--20 % nếu tổng doanh số là lớn hơn 300 triệu. */-->
+<script>
+    let turnover = parseFloat(prompt("Doanh thu(M): ",));
+    let commision;
+    if (turnover > 300) {
+    commision = turnover/100*20;
+    alert("tièn hoa hồng: " + commision + "M");
+    } else if (turnover > 100) {
+        commision = turnover/100*10;
+        alert("tiền hoa hồng: "+ commision + "M");
+    } else {
+        commision = turnover/100*5;
+        alert("tiền hoa hồng: "+ commision  + "M");
+    }
+</script>
+
+</body>
+</html>

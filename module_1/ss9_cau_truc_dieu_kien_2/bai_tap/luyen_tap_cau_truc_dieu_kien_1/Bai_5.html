@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let test = parseFloat(prompt("điểm kiểm tra: ",));
+    let midterm = parseFloat(prompt("điểm giữa kỳ:", ));
+    let finalterm = parseFloat(prompt("điểm cuối kỳ: ",));
+    let dtb = ( test + midterm*2+ finalterm*3 )/6;
+    if (dtb>=8) {
+        alert("Học lực Giỏi ");
+    } else if (dtb>=6.5) {
+        alert("Học lực Khá");
+    } else if (dtb>=5) {
+        alert("Học lực trung bình");
+    } else {
+        alert("Học lực yếu");
+    }
+</script>
+
+</body>
+</html>

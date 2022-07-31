@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function kiemTraTuDoiXung(str) {
+        str.split();
+        for (let i = 0; i < str.length; i++) {
+            for (let j = str.length - 1; j >= 0; j--) {
+                if (str[i] === str[j]) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        }
+    }
+
+    let str = prompt('nhập chuỗi bất kì: ');
+    let kq = kiemTraTuDoiXung(str);
+    alert(kq);
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrSoNguyen = [32, 1, 34, 2, 14, 2, 5, 51, 99, 765];
+    let max = arrSoNguyen[0];
+    let count = 0;
+    let tong = arrSoNguyen[0];
+    let tb = 0;
+    for (let i = 1; i <= arrSoNguyen.length - 1; i++) {
+        tong += arrSoNguyen[i];
+        count++;
+        if (arrSoNguyen[i] > max) {
+            max = arrSoNguyen[i];
+        }
+    }
+    tb = tong / count;
+    document.write(max);
+    document.write('<br/>');
+    document.write(tb);
+</script>
+</body>
+</html>

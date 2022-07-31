@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--              ĐƠN GIÁ THEO QĐ 648/QĐ-BCT (đồng/kWh) 	SẢN LƯỢNG (kWh)	    THÀNH TIỀN (đồng)-->
+<!--Bậc thang 1                	1678	                       0-50-->
+<!--Bậc thang 2             	1734                       	   51-100-->
+<!--Bậc thang 3             	2014                           101-200-->
+<!--Bậc thang 4                	2536                           201-300-->
+<!--Bậc thang 5             	2834                       	   301-400-->
+<!--Bậc thang 6             	2927	                        >400-->
+
+<script>
+    let quantity = parseFloat(prompt("nhập sản lượng điện đã tiêu thụ: "));
+    let step1 = 1678;
+    let step2 = 1734;
+    let step3 = 2014;
+    let step4 = 2536;
+    let step5 = 2834;
+    let step6 = 2927;
+    let bill;
+
+    if (quantity <= 50) {
+        bill = quantity * step1;
+        alert("hoá đơn tiền điện của bạn là: " + bill);
+    } else if (quantity <= 100) {
+        bill = quantity * step2;
+        alert("hoá đơn tiền điện của bạn là: " + bill);
+    } else if (quantity <= 200) {
+        bill = quantity * step3;
+        alert("hoá đơn tiền điện của bạn là: " + bill);
+    } else if (quantity <= 300) {
+        bill = quantity * step4;
+        alert("hoá đơn tiền điện của bạn là: " + bill);
+    } else if (quantity <= 400) {
+        bill = quantity * step5;
+        alert("hoá đơn tiền điện của bạn là: " + bill);
+    } else {
+        bill = quantity * step6;
+        alert("hoá đơn tiền điện của bạn là: " + bill);
+    }
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" style="width: 2000px; height: 1000px"></canvas>
+<script>
+    class Rectangle {
+        constructor(length, width) {
+            this.length = length;
+            this.width = width;
+        }
+        draw() {
+            let c = document.getElementById('myCanvas');
+            let ctx = c.getContext("2d");
+            ctx.beginPath();
+            ctx.rect(0, 0, this.length, this.width);
+            ctx.fillRect();
+        }
+
+        tinhDienTich() {
+            let area = this.length * this.width;
+            console.log(area);
+        }
+
+        tinhChuVi() {
+            let perimeter = (this.length + this.width) * 2;
+            console.log(perimeter);
+        }
+    }
+
+    let hcn = new Rectangle(200, 50);
+    hcn.draw();
+    hcn.tinhDienTich();
+    hcn.tinhChuVi();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VẼ HÌNH CHỮ NHẬT RỖNG </title>
+</head>
+<body>
+<script>
+    let a = parseInt(prompt("nhập chiều dài hcn:"));
+    let b = parseInt(prompt("nhập chiều rộng hcn:"));
+
+    for (let i = 1; i <= b; i++) {
+        for (let j = 1; j <= a; j++) {
+            if (i == 1 || i == b || j == 1 || j == a) {
+                document.writeln('*');
+            } else {
+                document.writeln('&nbsp&nbsp');
+            }
+        }
+        document.writeln('<br/>');
+    }
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let money = parseFloat(prompt("nhập số tiền: "));
+    let month = parseInt(prompt("nhập số tháng: "));
+    let i = parseFloat(prompt("lãi xuất hàng tháng: "));
+    let tienLai;
+    for (let j = 1; j <= month; j++) {
+        tienLai = i * money / 100;
+        money += tienLai;
+    }
+    alert('tổng lãi là: ' + tienLai);
+    alert('cả vốn lẫn lãi là: ' + money);
+
+</script>
+</body>
+</html>

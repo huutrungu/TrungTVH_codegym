@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function tinhGiaiThua(a) {
+        let total=1;
+        for (let i = a; i>0 ; i--) {
+            total *=i;
+        }
+        return total;
+    }
+    let num = parseInt(prompt('nhập số nguyên: '));
+    let tongGiaiThua = tinhGiaiThua(num);
+    alert(num+'!'+' = '+ tongGiaiThua);
+</script>
+</body>
+</html>

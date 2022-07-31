@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bậc thuế || Phần thu nhập tính thuế/năm(triệu đồng) || Phần thu nhập tính thuế/tháng(triệu đồng) || Thuế suất(%)-->
+<!--1                       Đến 60                                     Đến 5                                5%-->
+<!--2                 Trên 60 đến 120                           Trên 5 đến 10                               10%-->
+<!--3                 Trên 120 đến 216                          Trên 5 đến 10                               15%-->
+<!--4                 Trên 216 đến 384                          Trên 10 đến 18                              20%-->
+<!--5                 Trên 384 đến 624                          Trên 32 đến 52                              25%-->
+<!--6                 Trên 624 đến 960                          Trên 52 đến 80                              30%-->
+<!--7                 Trên 960                                  Trên 80                                     35%-->
+<script>
+    let income = parseFloat(prompt("Thu nhập của bạn(triệu đồng): "));
+    let tax;
+    if (income<=60) {
+        tax= income*5/100;
+        alert("thuế bạn phải nộp là: " + tax + "triệu đồng");
+    } else if (income<=120){
+        tax= income*10/100;
+        alert("thuế bạn phải nộp là: " + tax + "triệu đồng");
+    }else if (income<=216){
+        tax= income*15/100;
+        alert("thuế bạn phải nộp là: " + tax + "triệu đồng");
+    }else if (income<=384){
+        tax= income*20/100;
+        alert("thuế bạn phải nộp là: " + tax + "triệu đồng");
+    }else if (income<=624){
+        tax= income*30/100;
+        alert("thuế bạn phải nộp là: " + tax + "triệu đồng");
+    } else {
+        tax= income*35/100;
+        alert("thuế bạn phải nộp là: " + tax + "triệu đồng");
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            border: 1px solid;
+
+        }
+        #window {
+            border-style: solid;
+        }
+    </style>
+</head>
+<body>
+<table style="border-collapse: collapse; color: blue;height: 400px; width: 300px">
+    <tr>
+        <td colspan="4"><p id="window"></p></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="1" onclick="display(value)"></td>
+        <td><input type="button" value="2" onclick="display(value)"></td>
+        <td><input type="button" value="3" onclick="display(value)"></td>
+        <td><input type="button" value="+" onclick="display(value)"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="4" onclick="display(value)"></td>
+        <td><input type="button" value="5" onclick="display(value)"></td>
+        <td><input type="button" value="6" onclick="display(value)"></td>
+        <td><input type="button" value="-" onclick="display(value)"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="7" onclick="display(value)"></td>
+        <td><input type="button" value="8" onclick="display(value)"></td>
+        <td><input type="button" value="9" onclick="display(value)"></td>
+        <td><input type="button" value="*" onclick="display(value)"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="C" onclick="display(value)"></td>
+        <td><input type="button" value="0" onclick="display(value)"></td>
+        <td><input type="button" value="=" onclick="calculator()"></td>
+        <td><input type="button" value="/" onclick="display(value)"></td>
+    </tr>
+</table>
+<script>
+    let result = 0;
+    function display(value) {
+        let buttonValue = value;
+        document.getElementById("window").innerText += buttonValue;
+    }
+    function calculator() {
+        let strDisplay = document.getElementById("window").innerText;
+        strDisplay = strDisplay * 1;
+        console.log(strDisplay);
+    }
+
+</script>
+</body>
+</html>

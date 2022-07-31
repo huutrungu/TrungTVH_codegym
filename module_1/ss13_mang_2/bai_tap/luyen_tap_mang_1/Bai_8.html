@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrSoNguyen = [32, 1, 34, 2, 14, 2, 5, 51, 99, 765];
+    for (let i = 0; i <= arrSoNguyen.length - 1; i++) {
+        for (let j = i + 1; j <= arrSoNguyen.length - 1; j++) {
+            if (arrSoNguyen[i] < arrSoNguyen[j]) {
+                let c = arrSoNguyen[j];
+                arrSoNguyen[j] = arrSoNguyen[i];
+                arrSoNguyen[i] = c;
+            }
+        }
+    }
+    console.log(arrSoNguyen);
+</script>
+</body>
+</html>

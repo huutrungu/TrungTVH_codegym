@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Animal {
+        constructor(name, weight, speed) {
+            this.name = name;
+            this.weight = weight;
+            this.speed = speed;
+        }
+        say(text) {
+            console.log(text);
+        }
+    }
+    class Rat extends Animal {
+        constructor(name, weight, speed, status) {
+            super(name,weight, speed);
+        }
+        say(text) {
+            super.say('Chuot keu' + text);
+        }
+    }
+    class Cat extends Animal {
+        constructor(name, weight, speed) {
+            super(name,weight, speed);
+        }
+        say(text) {
+            console.log('Meo` keu:' + text);
+        }
+        eatMouse(rat) {
+            if (rat.status=='song') {
+                this.say('ngon qua');
+                this.weight += rat.weight;
+            } else {
+                this.say('chet roi ko an');
+            }
+        }
+        catchMouse(rat) {
+            if(this.speed>rat.speed) {
+                this.say('bat dc roi');
+                this.eatMouse(rat);
+            } else {
+                rat.say('do anh bat dc em');
+            }
+        }
+    }
+    let jerry = new Rat('Jerry',2,9,'song');
+    let tom = new Cat('Tom',10,10);
+
+    tom.catchMouse(jerry);
+</script>
+</body>
+</html>

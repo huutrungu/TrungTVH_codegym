@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Apple {
+        constructor() {
+            this.weight = 10;
+        }
+
+        decreaseWeight() {
+            this.weight--;
+        }
+
+        isEmptyAple() {
+            if (this.weight === 0) {
+                return true;
+            }
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+        laughing() {
+            console.log('hahaha');
+        }
+    }
+
+    class Human {
+        constructor(name, gender, weight) {
+            this.name = name;
+            this.gender = true;
+            this.weight = weight;
+        }
+
+        setGender(gender) {
+            this.gender = gender;
+        }
+
+        isMale() {
+            if (!this.gender) {
+                alert(this.name + ' is FeMale');
+            } else {
+                alert(this.name + ' is Male');
+            }
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        setWeight(weight) {
+            this.weight = weight;
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+
+        checkApple(apple) {
+            return console.log(apple.getWeight());
+        }
+
+        eatApple(apple) {
+            if (!apple.isEmptyAple()) {
+                this.weight++;
+                apple.decreaseWeight();
+            } else {
+                alert('hết táo rồi!');
+            }
+        }
+
+        say(str) {
+            console.log(this.name + ': ' + str);
+        }
+    }
+
+    let apple = new Apple();
+    let adam = new Human('Adam', true, 100);
+    adam.isMale();
+    adam.checkApple(apple);
+
+    let eva = new Human();
+    eva.setName('Eva');
+    eva.setGender(false);
+    eva.setWeight(42);
+    eva.isMale();
+
+    adam.say("ăn táo không "+ eva.getName()+ '?');
+    eva.say('uk');
+
+    for (let i = 0; i <= 5; i++) {
+        eva.eatApple(apple);
+        adam.eatApple(apple);
+    }
+    adam.checkApple(apple);
+    console.log(eva.getWeight());
+
+    adam.say('code xong bt rồi, đi ngủ thôi Eva.');
+    eva.say('Adam còn bài công tắc bóng đèn mà?!');
+    adam.say('... :<');
+    apple.laughing();
+
+</script>
+</body>
+</html>

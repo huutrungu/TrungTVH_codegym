@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="display"></p>
+<script>
+    let tableMultiplication = '<table border="1" width="30px">';
+    for (let i =1 ;i<10;i++){
+        tableMultiplication +='<tr>';
+        for (let j =2;j<10;j++){
+            tableMultiplication +='<td>'+j+'x'+i+ '=' +(i*j)+'</td>';
+        }
+        tableMultiplication+= '</tr>';
+    }
+    tableMultiplication+='</table>';
+    document.getElementById("display").innerHTML=tableMultiplication;
+</script>
+
+</body>
+</html>
