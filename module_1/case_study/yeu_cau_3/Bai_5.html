@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SIMPLE BEVERAGE ORDER PROGRAM</title>
+</head>
+<body>
+<input type="submit" value="Đặt món" onclick="oder()">
+<li> Menu
+    <ol>1.Cafe</ol>
+    <ol>2.Cam vắt</ol>
+    <ol>3.Nước ép cà rốt</ol>
+    <ol>4.Nước ép cà chua</ol>
+    <ol>5.Nước lọc</ol>
+    <ol>6.Nước dừa</ol>
+    <ol>7.Thoát gọi món</ol>
+</li>
+<script>
+    function oder() {
+        let menu = ['cafe', 'cam vắt', 'Nước ép cà rốt', 'Nước ép cà chua', 'Nước lọc', 'Nước dừa'];
+        let price = [10, 20, 20, 25, 5, 20];
+        let bill = 0;
+        let orderList = [];
+        let amountChoosen = [];
+
+        let num = null;
+        do {
+            do {
+                num = parseInt(prompt('nhập số để gọi món: '));
+            } while (isNaN(num) || num > 7)
+            if (num !== 7) {
+                alert(menu[num - 1] + ' có giá ' + price[num - 1] + '$');
+                let count = parseInt(prompt('vui lòng nhập số lượng: '));
+                amountChoosen.push(count);
+                bill += count * price[num - 1];
+                orderList.push(menu[num - 1]);
+            }
+        }
+        while (num !== 7)
+        let billTemp = '';
+        for (let i = 0; i < amountChoosen.length; i++) {
+            billTemp += amountChoosen[i] + ' ' + orderList[i] + ', ';
+        }
+        alert('hoá đơn của bạn gồm: ' + billTemp + 'tổng là: ' + bill + '$');
+        alert('Cảm ơn quý khách!');
+    }
+</script>
+</body>
+</html>

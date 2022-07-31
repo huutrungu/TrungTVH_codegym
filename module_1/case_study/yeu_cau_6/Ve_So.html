@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vé Số Codegym</title>
+</head>
+<body>
+<p> Xổ số Codegym </p>
+<input type="button" value="Mua vé" onclick="muaVe()">
+<script>
+    class VeSo {
+        constructor(daySo1, daySo2, daySo3, daySo4, daySo5, daySo6) {
+            this.daySo1 = daySo1;
+            this.daySo2 = daySo2;
+            this.daySo3 = daySo3;
+            this.daySo4 = daySo4;
+            this.daySo5 = daySo5;
+            this.daySo6 = daySo6;
+        }
+
+        getSo1() {
+            return this.daySo1;
+        }
+        getSo2() {
+            return this.daySo2;
+        }
+        getSo3() {
+            return this.daySo3;
+        }
+        getSo4() {
+            return this.daySo4;
+        }
+        getSo5() {
+            return this.daySo5;
+        }
+        getSo6() {
+            return this.daySo6;
+        }
+    }
+    let arr = [];
+    muaVe();
+    function muaVe() {
+        let phuongThuc;
+        do {
+            phuongThuc = prompt('chọn tính năng: ')
+        } while (phuongThuc != 1 && phuongThuc != 2)
+        if (phuongThuc == 1) {
+            tuChon();
+        } else {
+            ranDom();
+        }
+    }
+
+    function tuChon() {
+        for (let i = 0; i < 6; i++) {
+            let so;
+            do {
+                so = prompt('nhập số thứ' + (i + 1) + ' : ')
+            } while (so < 0 || so > 99 || isNaN(so));
+            if (so < 10) {
+                so = '0' + so;
+            }
+        }
+    }
+
+    function ranDom() {
+
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vẽ Tam Giác Cân Rỗng Chiều cao h</title>
+</head>
+<body>
+<script>
+
+    let h = parseInt(prompt('nhập chiều cao tam giác cân: '));
+    for (let i = 1; i <= h; i++) {
+        let temp;
+        for (let j = h - i; j >= 0; j--) {
+            document.write('&nbsp&nbsp');
+            temp = j + 1;
+        }
+        for (let k = 1; k <= 1 + (i - 1) * 2; k++) {
+            if (k === temp || k === 1 + (i - 1) * 2 || i === h) {
+                document.write('*');
+            } else {
+                document.write('&nbsp&nbsp');
+            }
+        }
+        document.write('<br/>');
+    }
+</script>
+</body>
+</html>

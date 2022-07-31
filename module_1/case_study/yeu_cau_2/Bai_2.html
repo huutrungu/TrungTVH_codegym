@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra kí tự nguyên âm</title>
+</head>
+<body>
+<script>
+    let char = '';
+    do {
+         char = prompt("nhap 1 ki tu chu cai: ");
+    } while (!isNaN(parseFloat(char)) || char.length !== 1 )
+    switch (char) {
+        case 'o':
+        case 'u':
+        case 'i':
+        case 'a':
+        case 'e':
+        case 'O':
+        case 'U':
+        case 'I':
+        case 'A':
+        case 'E':
+            alert(char + ' là nguyên âm.');
+            break;
+        default:
+            alert(char + ' là phụ âm.');
+    }
+</script>
+</body>
+</html>

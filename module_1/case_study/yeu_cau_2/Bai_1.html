@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lương, thuế thu nhập</title>
+</head>
+<body>
+<script>
+    let wage = parseFloat(prompt("nhập lương(triệu VND): "));
+    if (wage >= 15) {
+        wage = wage / 100 * 80;
+        console.log('lương của bạn là: ' + wage + 'triệu VND');
+    } else if (wage >= 7) {
+        wage = wage / 100 * 90;
+        console.log('lương của bạn là: ' + wage + 'triệu VND');
+    } else {
+        wage = wage / 100 * 95;
+        console.log('lương của bạn là: ' + wage + 'triệu VND');
+    }
+</script>
+</body>
+</html>

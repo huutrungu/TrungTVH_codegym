@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TÌM CHỈ SỐ CỦA PHÂN SỐ LỚN NHẤT</title>
+</head>
+<body>
+<script>
+    let arr1 = [5, 2, 5];
+    let arr2 = [6, 3, 4];
+    let max = arr1[0] / arr2[0];
+    let idMax = 0;
+    for (let i = 1; i < arr1.length; i++) {
+        if (arr1[i] / arr2[i] > max) {
+            max = arr1[i] / arr2[i];
+            idMax = i;
+        }
+    }
+    console.log(idMax);
+</script>
+</body>
+</html>

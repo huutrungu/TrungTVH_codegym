@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm phần tử KHÔNG xuất hiện trong mảng còn lại</title>
+</head>
+<body>
+<script>
+    let arrayA = [7, 2, 5, 3, 5, 3];
+    let arrayB = [7, 2, 5, 4, 6, 3, 5, 3];
+    let missingValue = [];
+    let flag = false;
+    for (let i = 0; i < arrayB.length ; i++) {
+        for (let j = 0; j < arrayA.length; j++) {
+            if(arrayA[j] === arrayB[i]) {
+                flag = false;
+                break;
+            } else {
+                flag = true;
+            }
+        }
+        if (flag) {
+            missingValue.push(arrayB[i]);
+        }
+    }
+    console.log(missingValue);
+</script>
+</body>
+</html>

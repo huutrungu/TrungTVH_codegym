@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hàm liệt kê các số nguyên tố trong mảng 2 chiều</title>
+</head>
+<body>
+<script>
+    let arr = [[1, 2, 3, 4], [5, 6, 7, 8], [2, 4, 6, 8]];
+    let countPrime = 0;
+    let strPrime = '';
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr[i].length; j++) {
+            function isPrime(n) {
+                let count1 = 0;
+                for (let i = 1; i <= n; i++) {
+                    if (n % i === 0) {
+                        count1++;
+                    }
+                }
+                if (count1 === 2) {
+                    return true;
+                }
+                return false;
+            }
+
+            if (isPrime(arr[i][j])) {
+                countPrime++;
+                strPrime += arr[i][j] + ', ';
+            }
+        }
+    }
+    console.log(countPrime);
+    console.log(strPrime);
+</script>
+</body>
+</html>

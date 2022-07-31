@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NHẬP MỘT SỐ TỪ BÀN PHÍM IN RA CHỮ</title>
+</head>
+<body>
+<script>
+    let num;
+    do {
+        num = prompt('Nhap so: ');
+    } while (isNaN(num))
+    let arrAlphabet = ['không', 'một', 'hai', 'ba', 'bốn', 'năm', 'sáu', 'bảy', 'tám', 'chín'];
+    let arrNum = num.split('');
+    let str = '';
+    for (let i = 0; i < arrNum.length; i++) {
+        str += arrAlphabet[arrNum[i]] + ' ';
+    }
+    console.log(str);
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm số lượng kí tự CHUNG của 2 xâu kí tự</title>
+</head>
+<body>
+<script>
+    let s1 = 'aabccad12312321';
+    let s2 = 'adcaaa13219321';
+    s1 = s1.split('');
+    s2 = s2.split('');
+    let count = 0;
+    let flag = false;
+    let arrKiTuChung = [];
+    let temp = 0;
+    for (let i = 0; i < s1.length; i++) {
+        for (let j = 0; j < s2.length; j++) {
+            if (s1[i] === s2[j]) {
+                flag = true;
+                temp = j;
+                break;
+            } else {
+                flag = false;
+            }
+        }
+        if (flag) {
+            count++;
+            s2.splice(temp, 1);          // xoá phần tử tại vị trí j.
+            arrKiTuChung.push(s1[i]);
+        }
+    }
+    console.log(s2);
+    console.log(arrKiTuChung);
+    console.log('số kí tự chung: ' + count);
+    // đếm số lần xuất hiện của mỗi phần tử.
+    let arrKiTuDon = new Array(1);
+    let flag1 = false;
+    let temp1;
+    for (let i = 0; i < arrKiTuChung.length; i++) {
+        for (let j = 0; j < arrKiTuDon.length; j++) {
+            if (arrKiTuDon[j] !== arrKiTuChung[i]) {
+                flag1 = true;
+                temp1 = i;
+            } else {
+                flag1 = false;
+                break;
+            }
+        }
+        if (flag1) {
+            arrKiTuDon.push(arrKiTuChung[temp1]);
+        }
+    }
+    arrKiTuDon.shift();
+    console.log(arrKiTuDon);
+    let demKiTuLap = new Array(arrKiTuDon.length);
+    console.log(demKiTuLap);
+    for (let i = 0; i < arrKiTuDon.length; i++) {
+        let countTemp = 0;
+        for (let j = 0; j < arrKiTuChung.length; j++) {
+            if (arrKiTuDon[i] === arrKiTuChung[j]) {
+                countTemp++;
+            }
+        }
+        demKiTuLap[i] = countTemp;
+    }
+    console.log(demKiTuLap);
+
+    document.write('2 xâu s1 và s2 có ' + count + ' kí tự chung: ');
+    for (let i = 0; i < arrKiTuDon.length; i++) {
+        document.write(demKiTuLap[i] + ' kí tự ' + "'" + arrKiTuDon[i] + "'" + ', ')
+    }
+</script>
+</body>
+</html>
