@@ -1,0 +1,127 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+#header {
+    text-align: center;
+    width: 100%;
+    height: 100px;
+    background-color: #0c63e4;
+    position: fixed;
+    top: 0;
+}
+#menu {
+    height: 100px;
+    padding:0;
+    margin:0;
+    background-color: pink;
+    border: 1px solid #CDCDCD;
+    width: 100%;
+    position: fixed;
+    top: 100px;
+}
+#menu ul, #menu li{
+    padding:0;
+    margin:0;
+}
+#menu ul, #menu li{
+    padding:0;
+    margin:0;
+}
+
+#menu li{
+    position: relative;
+    float: left;
+    list-style: none;
+    margin: 0;
+    padding:0;
+}
+#menu li a {
+    width: 150px;
+    height: 30px;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    line-height: 30px;
+    background-color:  #d63384;
+    color: white;
+}
+
+#menu ul ul li a {
+    width: 200px;
+    text-align: left;
+    padding-left: 10px;
+
+}
+#menu li a:hover{
+    background-color: #227374;
+}
+#menu ul ul{
+    position: absolute;
+    top: 30px;
+    left: 15px;
+    visibility: hidden;
+}
+#menu ul li:hover ul{
+    visibility: visible;
+}
+#the-loai {
+    width: 33%;
+    height: 100%;
+    font-size: 15px;
+    text-align: center;
+    border: #227374;
+    border-collapse: collapse;
+}
+#thinh-hanh {
+    width: 33%;
+    height: 100%;
+    font-size: 15px;
+    text-align: center;
+    border: #227374;
+    border-collapse: collapse;
+}
+#quoc-gia {
+    width: 33%;
+    height: 100%;
+    font-size: 15px;
+    text-align: center;
+    border: #227374;
+    border-collapse: collapse;
+}
+.video-de-xuat {
+    margin-left: 30px;
+}
+a{
+    text-decoration: none;
+}
+.right-sidebar{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 300px;
+}
+#body {
+    display: flex;
+    flex-direction: row;
+}
+@media screen and (max-width: 768px){
+    section{
+        flex-direction: column-reverse;
+    }
+}
