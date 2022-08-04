@@ -72,7 +72,7 @@
             <button>
                 <a href="/employees?action=create">Add</a>
             </button>
-            <form method="get" action="/employees" style="margin: 8px auto 8px 60%; border: solid chocolate" >
+            <form method="get" action="/employees" style="margin: 8px auto 8px 60%; border: solid chocolate">
                 <input type="hidden" name="action" value="search">
                 <button type="submit">Search</button>
                 <select name="positionId">
@@ -89,62 +89,62 @@
             </form>
             <table id="tableEmployee" class="table table-striped table-bordered" style="width: 100%">
                 <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Birthday</th>
-                        <th>ID Card</th>
-                        <th>Salary</th>
-                        <th>Phone</th>
-                        <th>Email</th>
-                        <th>Address</th>
-                        <th>Position</th>
-                        <th>Education Degree</th>
-                        <th>Division</th>
-                        <th>Username</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
-                    </tr>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Birthday</th>
+                    <th>ID Card</th>
+                    <th>Salary</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Position</th>
+                    <th>Education Degree</th>
+                    <th>Division</th>
+                    <th>Username</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
                 </thead>
                 <tbody>
-                    <c:forEach var="employee" items="${employees}">
-                        <tr>
-                            <td><c:out value="${employee.employeeId}"/></td>
-                            <td><c:out value="${employee.employeeName}"/></td>
-                            <td><c:out value="${employee.employeeBirthday}"/></td>
-                            <td><c:out value="${employee.employeeIdCard}"/></td>
-<%--                            value="<fmt:formatNumber>${employee.salary}</fmt:formatNumber>">--%>
-                            <td><fmt:formatNumber>${employee.salary}</fmt:formatNumber></td>
-                            <td><c:out value="${employee.employeePhone}"/></td>
-                            <td><c:out value="${employee.employeeEmail}"/></td>
-                            <td><c:out value="${employee.employeeAddress}"/></td>
-                            <td><c:forEach var="position" items="${positions}">
-                                <c:if test="${employee.positionId == position.positionId}">
-                                    ${position.positionName}
-                                </c:if>
-                            </c:forEach></td>
-                            <td><c:forEach var="educationDegree" items="${educationDegrees}">
-                                <c:if test="${employee.educationDegreeId == educationDegree.educationDegreeId}">
-                                    ${educationDegree.educationDegreeName}
-                                </c:if>
-                            </c:forEach></td>
-                            <td><c:forEach var="division" items="${divisions}">
-                                <c:if test="${employee.divisionId == division.divisionId}">
-                                    ${division.divisionName}
-                                </c:if>
-                            </c:forEach></td>
-                            <td><c:out value="${employee.username}"/></td>
-                            <td>
-                                <a href="/employees?action=edit&id=${employee.employeeId}">Edit</a>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal"
-                                        onclick="getId(${employee.employeeId})">
-                                    Delete
-                                </button>
-                            </td>
-                        </tr>
-                    </c:forEach>
+                <c:forEach var="employee" items="${employees}">
+                    <tr>
+                        <td><c:out value="${employee.employeeId}"/></td>
+                        <td><c:out value="${employee.employeeName}"/></td>
+                        <td><c:out value="${employee.employeeBirthday}"/></td>
+                        <td><c:out value="${employee.employeeIdCard}"/></td>
+                            <%--                            value="<fmt:formatNumber>${employee.salary}</fmt:formatNumber>">--%>
+                        <td><fmt:formatNumber>${employee.salary}</fmt:formatNumber></td>
+                        <td><c:out value="${employee.employeePhone}"/></td>
+                        <td><c:out value="${employee.employeeEmail}"/></td>
+                        <td><c:out value="${employee.employeeAddress}"/></td>
+                        <td><c:forEach var="position" items="${positions}">
+                            <c:if test="${employee.positionId == position.positionId}">
+                                ${position.positionName}
+                            </c:if>
+                        </c:forEach></td>
+                        <td><c:forEach var="educationDegree" items="${educationDegrees}">
+                            <c:if test="${employee.educationDegreeId == educationDegree.educationDegreeId}">
+                                ${educationDegree.educationDegreeName}
+                            </c:if>
+                        </c:forEach></td>
+                        <td><c:forEach var="division" items="${divisions}">
+                            <c:if test="${employee.divisionId == division.divisionId}">
+                                ${division.divisionName}
+                            </c:if>
+                        </c:forEach></td>
+                        <td><c:out value="${employee.username}"/></td>
+                        <td>
+                            <a class="btn btn-warning" href="/employees?action=edit&id=${employee.employeeId}">Edit</a>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal"
+                                    onclick="getId(${employee.employeeId})">
+                                Delete
+                            </button>
+                        </td>
+                    </tr>
+                </c:forEach>
                 </tbody>
             </table>
         </div>

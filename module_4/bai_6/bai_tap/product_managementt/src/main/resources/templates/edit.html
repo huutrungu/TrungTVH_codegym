@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Form</title>
+</head>
+<body>
+<h2>Update Product</h2>
+<form action="#" th:action="@{/update}" th:object="${productDto}" method="post" novalidate="novalidate">
+    <input type="hidden" th:field="*{productId}">
+    <div>
+        <label for="name">Name </label>
+            <input id="name" type="text" th:field="*{productName}"/>
+            <p style="color: red" th:if="${#fields.hasErrors('productName')}" th:errors="*{productName}"></p>
+
+    </div>
+    <div>
+        <label for="price">Price: </label>
+            <input id="price" type="text" th:field="*{price}"/>
+            <p style="color: red" th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></p>
+
+    </div>
+    <div>
+        <label for="quantity"> Quantity: </label>
+            <input id="quantity" type="text" th:field="*{quantity}"/>
+            <p style="color: red" th:if="${#fields.hasErrors('quantity')}" th:errors="*{quantity}"></p>
+    </div>
+    <div>
+        <label for="manufacturer">Manufacturer:   </label>
+        <input id="manufacturer" type="text" th:field="*{manufacturer}"/>
+        <p style="color: red" th:if="${#fields.hasErrors('manufacturer')}" th:errors="*{manufacturer}"></p>
+    </div>
+    <input type="submit" value="Update">
+    <button><a href="/list">Back To List</a></button>
+</form>
+</body>
+</html>
