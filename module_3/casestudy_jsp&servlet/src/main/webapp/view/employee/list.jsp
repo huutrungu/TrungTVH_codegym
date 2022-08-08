@@ -128,11 +128,13 @@
                                 ${educationDegree.educationDegreeName}
                             </c:if>
                         </c:forEach></td>
-                        <td><c:forEach var="division" items="${divisions}">
-                            <c:if test="${employee.divisionId == division.divisionId}">
-                                ${division.divisionName}
+                        <td><c:forEach var="division" items="${divisions}"
+                                       varStatus="postion" begin="0" end="${requestScope.positions.size()}">
+                            <c:if test="${employee.divisionId == division.divisionId || employee.positionId == postion.index+1}">
+                                ${division.divisionName} + ${requestScope.positions[postion.index+1].positionName}
                             </c:if>
-                        </c:forEach></td>
+                        </c:forEach>
+                        </td>
                         <td><c:out value="${employee.username}"/></td>
                         <td>
                             <a class="btn btn-warning" href="/employees?action=edit&id=${employee.employeeId}">Edit</a>
@@ -198,11 +200,13 @@
 <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap4.min.js"></script>
 <script>
     $(document).ready(function () {
-        $('#tableEmployee').dataTable({
-            "dom": 'lrtip',
-            "lengthChange": false,
-            "pageLength": 5
-        });
+        $('#tableEmployee').dataTable(
+            {
+                "dom": 'lrtip',
+                "lengthChange": false,
+                "pageLength": 5
+            }
+        );
     });
 </script>
 </html>
